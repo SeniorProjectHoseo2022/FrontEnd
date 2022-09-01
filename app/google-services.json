@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "526180374478",
+    "project_id": "test1-66dc4",
+    "storage_bucket": "test1-66dc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526180374478:android:66d502385b87ac7ce4fd9f",
+        "android_client_info": {
+          "package_name": "com.project.testkotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526180374478-gov1t27qbmq0r9tcpbkkjro5slkm3uah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHEYSOmojTRf9v_P9tWzBaF0tzG-h_4eQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526180374478-gov1t27qbmq0r9tcpbkkjro5slkm3uah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
