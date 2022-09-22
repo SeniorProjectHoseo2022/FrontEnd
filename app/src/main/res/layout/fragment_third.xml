@@ -14,7 +14,7 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:textColor="@color/logocolor"
-        android:text="Report Number"/>
+        android:text="메시지 보관함"/>
 
     <ListView
         android:id="@+id/mainListView"
