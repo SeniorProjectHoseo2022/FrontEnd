@@ -4,8 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import com.example.myapplication.retrofit.RetrofitManager
+import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -19,9 +23,23 @@ class LoginActivity : AppCompatActivity() {
 
         val MainActivityIntent = Intent(this, MainActivity::class.java)
         val btn3: Button = findViewById(R.id.btn_login)
-
+        val idText : EditText = findViewById(R.id.edit_id)
+        val pwText : EditText = findViewById(R.id.edit_pw)
         btn3.setOnClickListener{
-            startActivity(MainActivityIntent)
+            val id=idText.text.toString()
+            val pw=pwText.text.toString()
+            RetrofitManager.instance.Login(
+                id=id,
+                pw=pw
+            ) { responseBody ->
+                val Data = JSONObject(responseBody)
+                val msg = Data.getString("message")
+                if (msg == "404") {
+                }else {
+                    val uid = Data.getString("uid")
+                    startActivity(MainActivityIntent)
+                }
+            }
         }
     }
 }
