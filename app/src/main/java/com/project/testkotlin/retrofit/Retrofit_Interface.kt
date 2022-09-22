@@ -17,6 +17,7 @@ interface Retrofit_Interface {
     @FormUrlEncoded
     @POST(API.Login)
     fun Login(@Field("id") id :String,
-              @Field("pw") pw :String
+              @Field("pw") pw :String,
+              @Header("Authorization") auth : String
     ) : Call<JsonElement>
 }

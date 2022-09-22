@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.example.myapplication.retrofit.RetrofitManager
+import com.example.myapplication.utils.API
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
@@ -36,7 +37,9 @@ class LoginActivity : AppCompatActivity() {
                 val msg = Data.getString("message")
                 if (msg == "404") {
                 }else {
-                    val uid = Data.getString("uid")
+                    API.AccessKey = Data.getString("accessToken")
+                    API.RefreshKey = Data.getString("refreshToken")
+                    API.Uid = Data.getString("uid")
                     startActivity(MainActivityIntent)
                 }
             }

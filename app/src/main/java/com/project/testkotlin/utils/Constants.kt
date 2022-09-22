@@ -20,4 +20,7 @@ object API {
     const val AI_WORK : String = "work"
     const val API_URL : String = "http://10.0.2.2:8080/"
     const val Login : String = "account/login"
+    var AccessKey : String = ""
+    var RefreshKey : String = ""
+    var Uid : String = ""
 }
