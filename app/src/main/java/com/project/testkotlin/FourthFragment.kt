@@ -44,5 +44,7 @@ class FourthFragment : Fragment() {
         return view
     }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }

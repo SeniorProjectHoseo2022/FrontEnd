@@ -8,7 +8,7 @@
     tools:context=".FirstFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
+/*
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -16,13 +16,14 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:textColor="@color/logocolor"
-        android:text="스팸 번호 리스트" />
+        android:text="메시지 보관함" />
 
     <ListView
         android:id="@+id/mainListView"
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_marginBottom="20dp">
+
     </ListView>
 
     <LinearLayout
@@ -73,5 +74,5 @@
     </LinearLayout>
 
 
-
+*/
 </LinearLayout>

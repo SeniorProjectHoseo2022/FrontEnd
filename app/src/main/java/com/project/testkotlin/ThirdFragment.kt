@@ -22,16 +22,15 @@ class ThirdFragment : Fragment() {
         var view =inflater.inflate(R.layout.fragment_third, container, false)
 
         val list_item3 = mutableListOf<String>()
-        list_item3.add("1. 1644-9300" + "\n 휴대폰 판매 의심 번호입니다")
-        list_item3.add("2. 02-6230-9064" + "\n 휴대폰 판매 의심 번호입니다")
-        list_item3.add("3. 031-927-5521" + "\n 휴대폰 판매 의심 번호입니다")
-        list_item3.add("4. 02-6949-4281" + "\n 사기전화 유도 의심 번호입니다")
-        list_item3.add("5. 02-6470-1728" + "\n 사기전화 유도 의심 번호입니다")
-        list_item3.add("6. 070-7077-2294" + "\n 설문조사 마케팅 의심 번호입니다")
-        list_item3.add("7. 02-6196-2713" + "\n 설문조사 마케팅 의심 번호입니다")
-        list_item3.add("8. 032-324-3540" + "\n 중고사기 의심 번호입니다")
-        list_item3.add("9. 031-605-3078" + "\n 중고사기 의심 번호입니다")
-        list_item3.add("10. 041-425-7527" + "\n 악성코드 유포 의심 번호입니다")
+        list_item3.add("010-1234-5678" + "\n 보이스피싱 의심 번호입니다")
+        list_item3.add("010-9876-5432" + "\n 보이스피싱 의심 번호입니다")
+        list_item3.add("010-1111-2222" + "\n 대출안내 의심 번호입니다")
+        list_item3.add("010-3333-4444" + "\n 불법게임, 도박 의심 번호입니다")
+        list_item3.add("010-5555-6666" + "\n 불법게임, 도박 의심 번호입니다")
+        list_item3.add("010-7777-8888" + "\n 불법게임, 도박 번호입니다")
+        list_item3.add("010-9999-0000" + "\n 보험안내 번호입니다")
+        list_item3.add("1234-5678" + "\n 보험안내 번호입니다")
+        list_item3.add("1600-1600" + "\n 보험안내 번호입니다")
 
 
         val itemlist = view.findViewById<ListView>(R.id.mainListView) //fragment에서 사용법
@@ -52,5 +51,7 @@ class ThirdFragment : Fragment() {
 
         return view
     }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }
