@@ -17,14 +17,17 @@
         android:theme="@style/Theme.Testkotlin"
         tools:targetApi="31">
         <activity
-            android:name=".ReceiveSMSActivity"
+            android:name=".DetailListActivity"
             android:exported="false" />
-        <receiver android:name=".SmsReceiver"
+
+        <receiver
+            android:name=".SmsReceiver"
             android:exported="true">
             <intent-filter android:priority="1">
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".SignupActivity"
             android:exported="false" />
