@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ListView
 import androidx.navigation.findNavController
+import com.example.myapplication.utils.API
 
 
 class FirstFragment : Fragment() {
@@ -34,7 +35,6 @@ class FirstFragment : Fragment() {
         list_item.add("동생" + "\n 오빠 나 고데기사게 3만원만 빌려줘")
         list_item.add("1234-5678" + "\n 무 료 광 고 제 거 링 크 참 조")
         list_item.add("010-1234-1234" + "\n 무료 유출 픽 배당 100배 보장 바로 접속하세요")
-
         val itemlist = view.findViewById<ListView>(R.id.mainListView) //fragment에서 사용법
         val listviewadapter = ListViewAdapter(list_item)
 
