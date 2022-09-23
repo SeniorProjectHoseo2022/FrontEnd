@@ -27,11 +27,9 @@ class SmsReceiver : BroadcastReceiver() {
                 }else{
                     SmsMessage.createFromPdu(sms[i] as ByteArray)
                 }
-
                 val phoneNumber = smsMessage.originatingAddress
                 messageText += smsMessage.messageBody.toString()
             }
-
             val text = messageText
             val uid = "1"
             val pid = "1"
@@ -42,14 +40,12 @@ class SmsReceiver : BroadcastReceiver() {
                 pid =pid
             ) { responseBody ->
                 val Data = JSONObject(responseBody)
-
-                val qid = Data.getString("qid")
                 val message_Confirm = Data.getString("message_confirm").toInt()
                 val url = Data.getString("url")
                 val url_confirm = Data.getString("url_confirm").toInt()
                 val confirm_text = arrayOf("안전", "위험")
 
-                val response = "\n요청ID : " + qid +
+                val response = "\n메세지 : " + text +
                         "\n메세지 탐지 결과 : " + confirm_text[message_Confirm]+
                         "\n탐지 URL : " +  url +
                         "\nURL 탐지 결과 : " + confirm_text[url_confirm]

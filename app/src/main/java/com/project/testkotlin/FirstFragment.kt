@@ -42,14 +42,17 @@ class FirstFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btn2).setOnClickListener{
             it.findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
+            this.onDestroy()
         }
 
         view.findViewById<Button>(R.id.btn3).setOnClickListener{
             it.findNavController().navigate(R.id.action_firstFragment_to_thirdFragment)
+            this.onDestroy()
         }
 
         view.findViewById<Button>(R.id.btn4).setOnClickListener{
             it.findNavController().navigate(R.id.action_firstFragment_to_fourthFragment)
+            this.onDestroy()
         }
 
         return view

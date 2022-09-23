@@ -32,7 +32,7 @@ class RetrofitManager {
     fun Login(id: String?, pw: String?, completion:(String) -> Unit) {
         var id = id ?:""
         var pw = pw ?:""
-        val call = API_Retrofit?.Login(id=id, pw=pw, auth="1") ?: return
+        val call = API_Retrofit?.Login(id=id, pw=pw) ?: return
         call.enqueue(object : retrofit2.Callback<JsonElement>{
             override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
                 Log.d(TAG, "Manager - Success ${response.raw()}")
