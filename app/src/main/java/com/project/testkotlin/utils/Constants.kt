@@ -23,4 +23,6 @@ object API {
     var AccessKey : String = ""
     var RefreshKey : String = ""
     var Uid : String = ""
+    var pn : String = "01012345678"
+    var idx : Int = 0
 }

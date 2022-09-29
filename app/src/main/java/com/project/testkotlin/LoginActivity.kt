@@ -1,10 +1,13 @@
 package com.project.testkotlin
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.core.app.ActivityCompat
 import com.example.myapplication.retrofit.RetrofitManager
 import com.example.myapplication.utils.API
 import org.json.JSONObject
@@ -14,6 +17,12 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS)
+            != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.RECEIVE_SMS),
+                2)
+        }
 
         val SignupActivityIntent = Intent(this, SignupActivity::class.java) //인턴트 생성
         val btn2: Button = findViewById(R.id.btn_register)        //버튼 정의
