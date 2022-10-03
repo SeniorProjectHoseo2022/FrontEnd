@@ -7,6 +7,9 @@ import android.os.Handler
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import com.example.myapplication.retrofit.RetrofitManager
+import com.example.myapplication.utils.API
+import org.json.JSONObject
 
 class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,14 +30,22 @@ class SignupActivity : AppCompatActivity() {
 
             var text1 = editText.text.toString()
             var text2 = editText2.text.toString()
-            val LoginActivityIntent = Intent(this, LoginActivity::class.java)
-
             var dialog = AlertDialog.Builder(
                 this@SignupActivity)
+            var t1 = findViewById<EditText>(R.id.signPW)
+            var pw = t1.text.toString()
+            var pid = findViewById<EditText>(R.id.signmail).text.toString()
+            RetrofitManager.instance.sign(
+                id=text1,
+                pw=pw,
+                pid=pid
+            ) { responseBody ->
+                dialog.setTitle("알람")
+                dialog.setMessage("안녕하세요" + text2 + "님 ! \n"  + "입력하신 " + text1 + "로 회원가입에 성공하였습니다!")
+                dialog.show()
+            }
 
-            dialog.setTitle("알람")
-            dialog.setMessage("안녕하세요" + text2 + "님 ! \n"  + "입력하신 " + text1 + "로 회원가입에 성공하였습니다!")
-            dialog.show()
+
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.project.testkotlin
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
@@ -35,9 +36,13 @@ class LoginActivity : AppCompatActivity() {
         val btn3: Button = findViewById(R.id.btn_login)
         val idText : EditText = findViewById(R.id.edit_id)
         val pwText : EditText = findViewById(R.id.edit_pw)
-        btn3.setOnClickListener{
-            val id=idText.text.toString()
-            val pw=pwText.text.toString()
+
+        val pf = this.getSharedPreferences("test", Context.MODE_PRIVATE)
+        val editor = pf.edit()
+
+        if (pf.contains("id")==true){
+            val id=pf.getString("id","")
+            val pw=pf.getString("pw","")
             RetrofitManager.instance.Login(
                 id=id,
                 pw=pw
@@ -53,5 +58,28 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+
+        btn3.setOnClickListener{
+            val id=idText.text.toString()
+            val pw=pwText.text.toString()
+            RetrofitManager.instance.Login(
+                id=id,
+                pw=pw
+            ) { responseBody ->
+                val Data = JSONObject(responseBody)
+                val msg = Data.getString("message")
+                if (msg == "404") {
+                }else {
+                    API.AccessKey = Data.getString("accessToken")
+                    API.RefreshKey = Data.getString("refreshToken")
+                    API.Uid = Data.getString("uid")
+                    editor.putString("id",id)
+                    editor.putString("pw",pw)
+                    editor.commit()
+                    startActivity(MainActivityIntent)
+                }
+            }
+        }
     }
+
 }

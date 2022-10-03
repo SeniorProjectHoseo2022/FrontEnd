@@ -16,13 +16,13 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:textColor="@color/logocolor"
-        android:text="실시간 스팸 번호 Top 10!"/>
+        android:text="실시간 스팸 번호"/>
 
     <ListView
         android:id="@+id/mainListView"
         style="@style/Widget.AppCompat.ListView.Menu"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="607dp"
         android:layout_marginBottom="20dp">
 
     </ListView>
@@ -33,7 +33,7 @@
 
         <Button
             android:id="@+id/btn1"
-            android:text="1"
+            android:text="메세지 보관함"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -41,24 +41,13 @@
             android:layout_marginLeft="3dp"
             android:backgroundTint="@color/logocolor">
         </Button>
-
-        <Button
-            android:id="@+id/btn2"
-            android:text="2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="3dp"
-            android:backgroundTint="@color/logocolor">
-        </Button>
-
         <Button
             android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="3dp"
-            android:text="3"
+            android:text="번호 조회"
             android:backgroundTint="@color/logocolor">
         </Button>
 
@@ -68,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="3dp"
-            android:text="4"
+            android:text="스펨 보관함"
             android:backgroundTint="@color/logocolor">
         </Button>
 

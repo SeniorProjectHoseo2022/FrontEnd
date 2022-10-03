@@ -3,27 +3,14 @@ package com.project.testkotlin
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Build
 import android.telephony.SmsMessage
-import android.util.TypedValue
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
 import com.example.myapplication.retrofit.RetrofitManager
-import com.google.android.material.snackbar.Snackbar
 import org.json.JSONArray
 import org.json.JSONObject
-import java.util.prefs.Preferences
 
 class SmsReceiver : BroadcastReceiver() {
-
-
     override fun onReceive(context: Context, intent: Intent) {
-
         val extras = intent.extras
         val pf = context.getSharedPreferences("test",Context.MODE_PRIVATE)
         val editor = pf.edit()
@@ -77,7 +64,6 @@ class SmsReceiver : BroadcastReceiver() {
                     pns = JSONObject()
                 pns.put(phoneNumber, text)
                 editor.putString("pns", pns.toString())
-
                 editor.commit()
             }
         }
